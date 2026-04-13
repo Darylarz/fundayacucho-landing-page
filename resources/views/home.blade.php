@@ -29,12 +29,30 @@
 
     {{-- Invitaciones --}}
     <section class="container my-5">
+        @if(auth()->check() && auth()->user()->hasRole('admin'))
+            <div class="text-end mb-3">
+                <a href="{{ route('admin.invitaciones.create') }}" class="btn btn-primary btn-sm">
+                    <i class="bi bi-plus-circle me-2"></i>Agregar Invitación
+                </a>
+            </div>
+        @endif
+        
         <div class="row text-center justify-content-center">
             @foreach($invitaciones as $invitacion)
                 <div class="col-md-3 mb-4">
-                    <a href="{{ $invitacion->link ?? '#' }}" target="_blank">
-                        <img src="{{ Storage::url($invitacion->image_path) }}" class="img-fluid rounded shadow-sm hover-scale" alt="{{ $invitacion->title }}">
-                    </a>
+                    <div class="card h-100 border-0 shadow-sm">
+                        <a href="{{ $invitacion->link ?? '#' }}" target="_blank">
+                            <img src="{{ Storage::url($invitacion->image_path) }}" class="card-img-top rounded-top hover-scale" alt="{{ $invitacion->title }}" style="height: 200px; object-fit: cover;">
+                        </a>
+                        @if($invitacion->title)
+                        <div class="card-body p-3">
+                            <h6 class="card-title fw-bold text-primary">{{ $invitacion->title }}</h6>
+                            @if($invitacion->description)
+                                <p class="card-text small text-muted">{{ Str::limit($invitacion->description, 80) }}</p>
+                            @endif
+                        </div>
+                        @endif
+                    </div>
                 </div>
             @endforeach
         </div>
