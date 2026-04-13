@@ -47,15 +47,16 @@ Route::get('/admin', function () {
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     Route::get('dashboard', [AdminController::class, 'index'])->name('dashboard');
+    
+    // Módulo de Invitaciones - CRUD básico para usuarios autenticados
+    Route::resource('invitaciones', InvitacionController::class)->except(['destroy']);
+    Route::delete('invitaciones/{invitacion}', [InvitacionController::class, 'destroy'])->name('invitaciones.destroy');
 });
 
 // Rutas del panel administrativo (protegidas por autenticación y rol 'admin')
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     // Módulo de Carrusel
     Route::resource('carousel', CarouselController::class);
-    
-    // Módulo de Invitaciones
-    Route::resource('invitaciones', InvitacionController::class);
     
     // Módulo de Noticias
     Route::resource('noticias', NoticiaController::class);
