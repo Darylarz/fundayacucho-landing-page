@@ -35,6 +35,14 @@ Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
+// Ruta de acceso directo al panel administrativo
+Route::get('/admin', function () {
+    if (auth()->check()) {
+        return redirect()->route('admin.dashboard');
+    }
+    return redirect()->route('login');
+})->name('admin.access');
+
 // Rutas del panel administrativo (protegidas por autenticación)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');

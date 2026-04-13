@@ -21,7 +21,6 @@
                 <li class="nav-item"><a class="nav-link text-white" href="{{ route('home') }}">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="{{ route('historia') }}">Historia</a></li>
                 <li class="nav-item"><a class="nav-link text-white" href="{{ route('mision') }}">Misión y Visión</a></li>
-                <li class="nav-item"><a class="nav-link text-warning" href="{{ route('admin.dashboard') }}">Panel Admin</a></li>
             </ul>
         </div>
     </div>
