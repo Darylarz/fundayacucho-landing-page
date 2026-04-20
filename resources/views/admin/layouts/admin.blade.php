@@ -99,6 +99,22 @@
                         </ul>
                     </li>
                     
+                    <!-- Información -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ request()->routeIs('admin.informaciones.*') ? 'active' : '' }}" 
+                           href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-info-circle me-1"></i> Información
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ route('admin.informaciones.index') }}">
+                                <i class="bi bi-list-ul me-2"></i> Ver Información
+                            </a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin.informaciones.create') }}">
+                                <i class="bi bi-plus-circle me-2"></i> Nueva Información
+                            </a></li>
+                        </ul>
+                    </li>
+                    
                     <!-- Configuración -->
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('admin.config.*') ? 'active' : '' }}" 

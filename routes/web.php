@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\InvitacionController;
 use App\Http\Controllers\Admin\NoticiaController;
 use App\Http\Controllers\Admin\LibroController;
 use App\Http\Controllers\Admin\ConfigController;
+use App\Http\Controllers\Admin\InformacionController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -51,6 +52,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Módulo de Invitaciones - CRUD básico para usuarios autenticados
     Route::resource('invitaciones', InvitacionController::class)->except(['destroy']);
     Route::delete('invitaciones/{invitacion}', [InvitacionController::class, 'destroy'])->name('invitaciones.destroy');
+    
+    // Módulo de Información - CRUD básico para usuarios autenticados
+    Route::resource('informaciones', InformacionController::class)->except(['destroy']);
+    Route::delete('informaciones/{informacion}', [InformacionController::class, 'destroy'])->name('informaciones.destroy');
 });
 
 // Rutas del panel administrativo (protegidas por autenticación y rol 'admin')
