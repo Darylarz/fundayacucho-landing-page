@@ -233,9 +233,8 @@ Usuario:   admin@fundayacucho.gob.ve
 Contraseña: (la definida en el paso anterior)
 ```
 
-> ⚠️ **Cambiar la contraseña inmediatamente después del primer ingreso en producción.**
-
----
+> ⚠️ **Cambiar la contraseña inmediatamente después del primer ingreso en producción.*\
+--
 
 ## Módulos del CMS
 
@@ -279,11 +278,12 @@ Panel centralizado para los datos globales del sitio.
 
 ---
 
+
 ## Paleta de Colores
 
 ```css
 /* Colores institucionales de Fundayacucho */
---color-primario:   #002B48;  /* Azul oscuro — navbar, footer */
+--color-primario:   #002B48;  /* Azul oscuro — navbar, foofooterter */
 --color-acento:     #ff8000;  /* Naranja — botones, destacados */
 --color-texto:      #ffffff;  /* Blanco — texto sobre fondo oscuro */
 --color-fondo:      #f8f9fa;  /* Gris claro — fondo de secciones */

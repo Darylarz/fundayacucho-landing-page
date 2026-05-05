@@ -1,6 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Hero Section --}}
+    <section class="hero-section bg-primary text-white py-5 mb-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">Fundación Gran Mariscal de Ayacucho</h1>
+                    <p class="lead mb-4">Transformando vidas a través de la educación superior. Accede a oportunidades de becas y programas académicos de excelencia para construir tu futuro profesional.</p>
+                    <a href="{{ route('becarios') }}" class="btn btn-light btn-lg text-primary fw-bold">
+                        <i class="bi bi-mortarboard-fill me-2"></i>
+                        Postula a una Beca
+                    </a>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="hero-icon">
+                        <i class="bi bi-award-fill" style="font-size: 8rem; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     {{-- Carrusel --}}
     @if($slides->count() > 0)
     <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">

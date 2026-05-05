@@ -27,6 +27,10 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/historia', [PageController::class, 'historia'])->name('historia');
 Route::get('/mision', [PageController::class, 'mision'])->name('mision');
+Route::get('/becarios', function () {
+    return view('becarios');
+})->name('becarios');
+
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
